@@ -305,7 +305,15 @@ namespace Velox.DB.Sql
             if (Translate(node.Expression) != null)
                 throw new SqlExpressionTranslatorException(node.ToString());
 
-            string sql = ProcessRelation(node, node.Expression, node.Member.Name);
+            var memberName = node.Member.Name;
+            var field      = _schema.FieldsByFieldName[memberName];
+
+            if (field != null && !String.IsNullOrEmpty(field.MappedName))
+            {
+                memberName = field.MappedName;
+            }
+
+            string sql = ProcessRelation(node, node.Expression, memberName);
 
             if (sql != null)
             {

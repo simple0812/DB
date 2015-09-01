@@ -86,12 +86,18 @@ namespace Velox.DB.Sqlite
             if (recreateTable)
                 recreateIndexes = true;
 
-
             HashSet<string> tableNames = new HashSet<string>(dataProvider.ExecuteSqlReader("SELECT name FROM sqlite_master WHERE type='table'", null).Select(rec => rec["name"].ToString()),StringComparer.OrdinalIgnoreCase);
 
-            if (tableNames.Contains(schema.MappedName) && recreateTable)
+            if (tableNames.Contains(schema.MappedName))
             {
-                dataProvider.ExecuteSql("DROP TABLE " + QuoteTable(schema.MappedName), null);
+                if (recreateTable)
+                {
+                    dataProvider.ExecuteSql("DROP TABLE " + QuoteTable(schema.MappedName), null);
+                }
+                else
+                {
+                    return;
+                }
             }
 
             var existingColumns = dataProvider.ExecuteSqlReader("pragma table_info(" + QuoteTable(schema.MappedName) + ")", null).ToLookup(rec => rec["name"].ToString());
@@ -99,9 +105,7 @@ namespace Velox.DB.Sqlite
             var parts = new List<string>();
 
             bool createNew = true;
-
-            
-
+           
             foreach (var field in schema.Fields)
             {
                 var columnMapping = columnMappings.FirstOrDefault(mapping => field.FieldInfo.TypeInspector.Is(mapping.Flags));
@@ -177,8 +181,6 @@ namespace Velox.DB.Sqlite
 
                 dataProvider.ExecuteSql(createIndexSql, null);
             }
-
         }
-
     }
 }

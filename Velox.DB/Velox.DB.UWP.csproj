@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AC94060-3FC5-4647-8223-59A943BC7CCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Velox.DB</RootNamespace>
+    <AssemblyName>Velox.DB</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;VELOX_DB</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;VELOX_DB</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;VELOX_DB</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregate.cs" />
+    <Compile Include="Attributes\ColumnAttributes.cs" />
+    <Compile Include="Attributes\PreserveAttribute.cs" />
+    <Compile Include="Attributes\RelationAttributes.cs" />
+    <Compile Include="Attributes\TableAttributes.cs" />
+    <Compile Include="Core\Reflection\FieldOrPropertyInfo.cs" />
+    <Compile Include="Core\Reflection\Inspectors\MemberInspector.cs" />
+    <Compile Include="Core\Reflection\Inspectors\PropertyInspector.cs" />
+    <Compile Include="Core\Reflection\Inspectors\TypeInspector.cs" />
+    <Compile Include="Core\Reflection\LazyBinder.cs" />
+    <Compile Include="Core\Reflection\ObjectMapper.cs" />
+    <Compile Include="Core\Reflection\ReflectionExtensions.cs" />
+    <Compile Include="Core\SafeDictionary.cs" />
+    <Compile Include="Core\SmartConverter\EnumConverter.cs" />
+    <Compile Include="Core\SmartConverter\IStringConverter.cs" />
+    <Compile Include="Core\SmartConverter\ObjectConverter.cs" />
+    <Compile Include="Core\SmartConverter\StringConverter.cs" />
+    <Compile Include="DataProviders\IDataProvider.cs" />
+    <Compile Include="DataProviders\Memory\MemoryDataProvider.cs" />
+    <Compile Include="DataProviders\Sql\ExpressionTranslator\SqlExpressionTranslator.cs" />
+    <Compile Include="DataProviders\Sql\ExpressionTranslator\SqlExpressionTranslatorException.cs" />
+    <Compile Include="DataProviders\Sql\SqlDataProvider.cs" />
+    <Compile Include="DataProviders\Sql\SqlDialect.cs" />
+    <Compile Include="DataProviders\Sql\SqlJoinDefinition.cs" />
+    <Compile Include="DataProviders\Sql\SqlJoinPart.cs" />
+    <Compile Include="DataProviders\Sql\SqlNameGenerator.cs" />
+    <Compile Include="DataProviders\Sql\SqlNameWithAlias.cs" />
+    <Compile Include="DataProviders\Sql\SqlQuerySpec.cs" />
+    <Compile Include="DataSet\AsyncDataSet.cs" />
+    <Compile Include="DataSet\DataSet.cs" />
+    <Compile Include="DataSet\IAsyncDataSet.cs" />
+    <Compile Include="DataSet\IDataSet.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="LambdaExpressions\LambdaQueryExpression.cs" />
+    <Compile Include="LambdaExpressions\PartialEvaluator.cs" />
+    <Compile Include="ObjectWriteResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Query\CodeQuerySpec.cs" />
+    <Compile Include="Query\FilterSpec.cs" />
+    <Compile Include="Query\ICodeQuerySpec.cs" />
+    <Compile Include="Query\INativeQuerySpec.cs" />
+    <Compile Include="Query\IQuerySpec.cs" />
+    <Compile Include="Query\QueryExpression.cs" />
+    <Compile Include="Query\QueryParameterCollection.cs" />
+    <Compile Include="Query\ScalarSpec.cs" />
+    <Compile Include="Query\SortOrder.cs" />
+    <Compile Include="Query\SortOrderSpec.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\Repository.Events.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="Schema\NamingConvention.cs" />
+    <Compile Include="Schema\OrmSchema.cs" />
+    <Compile Include="Schema\OrmSchema.Field.cs" />
+    <Compile Include="Schema\RelationFinder.cs" />
+    <Compile Include="SerializedEntity.cs" />
+    <Compile Include="Vx\Vx.ActiveRecord.cs" />
+    <Compile Include="Vx\Vx.Config.cs" />
+    <Compile Include="Vx\Vx.Context.cs" />
+    <Compile Include="Vx\Vx.cs" />
+    <Compile Include="Vx\Vx.Events.cs" />
+    <Compile Include="Vx\Vx.Relations.cs" />
+    <Content Include="Properties\Velox.DB.rd.xml" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

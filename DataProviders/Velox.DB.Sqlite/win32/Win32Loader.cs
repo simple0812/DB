@@ -1,6 +1,4 @@
-﻿#if !WINDOWS_UWP
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -81,5 +79,3 @@ namespace Velox.DB.Sqlite.win32
         }
     }
 }
-
-#endif

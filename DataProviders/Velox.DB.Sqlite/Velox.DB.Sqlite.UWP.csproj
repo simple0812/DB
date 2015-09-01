@@ -120,7 +120,6 @@
     <Compile Include="SqliteContext.cs" />
     <Compile Include="SqliteDataProvider.cs" />
     <Compile Include="SqliteDialect.cs" />
-    <Compile Include="win32\Win32Loader.cs" />
     <Content Include="Properties\Velox.DB.Sqlite.rd.xml" />
   </ItemGroup>
   <ItemGroup>

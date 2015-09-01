@@ -32,7 +32,6 @@ using System.Threading.Tasks;
 using Velox.DB.Core;
 using Velox.DB.Sql;
 using Velox.DB.Sqlite.API;
-using Velox.DB.Sqlite.win32;
 
 namespace Velox.DB.Sqlite
 {
@@ -45,7 +44,9 @@ namespace Velox.DB.Sqlite
 
         static SqliteDataProvider()
         {
-            Win32Loader.CheckAndLoadSqliteLibrary();
+#if !WINDOWS_UWP
+            win32.Win32Loader.CheckAndLoadSqliteLibrary();
+#endif
         }
 
         public SqliteDataProvider()

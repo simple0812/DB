@@ -79,7 +79,7 @@ namespace Velox.DB
             {
                 var fieldInspector = field.Inspector;
 
-                if (fieldInspector.HasAttribute<Column.IgnoreAttribute>() || (!fieldInspector.IsWritePublic))
+                if (fieldInspector.HasAttribute<Column.IgnoreAttribute>() || !fieldInspector.CanWrite)
                     continue;
 
                 var schemaField = new Field(field);
@@ -346,5 +346,4 @@ namespace Velox.DB
         }
 #endif
     }
-
 }

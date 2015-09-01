@@ -87,8 +87,21 @@ namespace Velox.Core
                 }
 
                 return IsPublic;
-            }
-            
+            }            
+        }
+
+        public bool CanWrite
+        {
+            get
+            {
+                var propertyInfo = _memberInfo as PropertyInfo;
+                if (propertyInfo != null)
+                {
+                    return propertyInfo.CanWrite;
+                }
+
+                return false;
+            }            
         }
 
         internal bool MatchBindingFlags(BindingFlags flags)
@@ -130,7 +143,5 @@ namespace Velox.Core
             else
                 throw new InvalidOperationException();
         }
-
-
     }
 }

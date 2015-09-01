@@ -89,7 +89,7 @@ namespace Velox.DB
                     continue;
 
                 if (saveRelations)
-                    relation.ForeignSchema.Repository.Save(foreignObject);
+                    relation.ForeignSchema.Repository.Save(foreignObject, saveRelations, create);
 
                 var foreignKeyValue = relation.ForeignField.GetField(foreignObject);
 
@@ -103,7 +103,6 @@ namespace Velox.DB
 
             if (result.OriginalUpdated)
                 Schema.UpdateObject(obj, serializedEntity);
-
 
             // Update and save OneToMany relations
             foreach (var relation in toManyRelations)
@@ -122,7 +121,7 @@ namespace Velox.DB
                         relation.ForeignField.SetField(foreignObject, localKeyValue);
 
                     if (saveRelations)
-                        relation.ForeignSchema.Repository.Save(foreignObject);
+                        relation.ForeignSchema.Repository.Save(foreignObject, saveRelations, create);
                 }
             }
 

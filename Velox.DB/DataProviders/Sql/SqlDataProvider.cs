@@ -345,8 +345,6 @@ namespace Velox.DB.Sql
 
             SqlExpressionTranslator sqlTranslator = new SqlExpressionTranslator(SqlDialect, schema, tableAlias);
 
-//            SqlExpressionTranslator sqlTranslator = new SqlExpressionTranslator(SqlDialect,schema,tableAlias);
-
             string filterSql = null;
 
             CodeQuerySpec codeQuerySpec = null;

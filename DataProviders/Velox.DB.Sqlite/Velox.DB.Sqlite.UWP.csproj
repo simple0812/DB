@@ -130,12 +130,6 @@
       <Name>SQLite for Universal App Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Velox.DB\Velox.DB.UWP.csproj">
-      <Project>{4ac94060-3fc5-4647-8223-59a943bc7ccf}</Project>
-      <Name>Velox.DB</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

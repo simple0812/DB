@@ -57,7 +57,7 @@ namespace Velox.DB.Sqlite
         public override string GetLastAutoincrementIdSql(string columnName, string alias, string tableName)
         {
             throw new NotSupportedException(); // Is handled in DataProvider class
-            return "select last_insert_rowid() as " + alias;
+            // return "select last_insert_rowid() as " + alias;
         }
 
         public override string DeleteSql(SqlTableNameWithAlias tableName, string sqlWhere)
@@ -80,7 +80,8 @@ namespace Velox.DB.Sqlite
                 new {Flags = TypeFlags.FloatingPoint, ColumnType = "REAL"},
                 new {Flags = TypeFlags.String, ColumnType = "VARCHAR({0})"},
                 new {Flags = TypeFlags.Array | TypeFlags.Byte, ColumnType = "LONGBLOB"},
-                new {Flags = TypeFlags.DateTime, ColumnType = "DATETIME"}
+                new {Flags = TypeFlags.DateTime, ColumnType = "DATETIME"},
+                new {Flags = TypeFlags.DateTimeOffset, ColumnType = "INTEGER"}
             };
 
             if (recreateTable)

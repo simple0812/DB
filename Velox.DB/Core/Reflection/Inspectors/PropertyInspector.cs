@@ -16,6 +16,6 @@ namespace Velox.Core
         }
 
         public bool CanRead => _propertyInfo.CanRead;
-        public bool CanWrite => _propertyInfo.CanWrite;
+        public new bool CanWrite => _propertyInfo.CanWrite;
     }
 }

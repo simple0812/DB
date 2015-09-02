@@ -149,7 +149,7 @@ namespace Velox.DB.Sql
 
                 case ExpressionType.Constant:
                     {
-                        if (expression.Type.Inspector().Is(TypeFlags.Numeric | TypeFlags.Boolean | TypeFlags.String | TypeFlags.DateTime | TypeFlags.Enum))
+                        if (expression.Type.Inspector().Is(TypeFlags.Numeric | TypeFlags.Boolean | TypeFlags.String | TypeFlags.DateTime | TypeFlags.DateTimeOffset | TypeFlags.Enum))
                             return CreateParameter(((ConstantExpression) expression).Value);
                     }
                     break;

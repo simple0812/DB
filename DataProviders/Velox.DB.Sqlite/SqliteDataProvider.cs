@@ -115,7 +115,6 @@ namespace Velox.DB.Sqlite
             }
         }
 
-
         private IntPtr CreateCommand(string sql, QueryParameterCollection parameters)
         {
             IntPtr stmt;
@@ -130,6 +129,7 @@ namespace Velox.DB.Sqlite
             }
 
             if (parameters != null)
+            {
                 foreach (var varName in parameters.Keys)
                 {
                     int paramNumber = _sqlite3.bind_parameter_index(stmt, SqlDialect.CreateParameterExpression(varName));
@@ -158,10 +158,13 @@ namespace Velox.DB.Sqlite
                             _sqlite3.bind_blob(stmt, paramNumber, (byte[])value);
                         else if (parameterType.Is(TypeFlags.DateTime))
                             _sqlite3.bind_int64(stmt, paramNumber, ((DateTime)value).Ticks);
+                        else if (parameterType.Is(TypeFlags.DateTimeOffset))
+                            _sqlite3.bind_int64(stmt, paramNumber, ((DateTimeOffset)value).UtcTicks);
                         else
                             _sqlite3.bind_text(stmt, paramNumber, value.Convert<string>());
                     }
                 }
+            }
 
             return stmt;
         }
@@ -173,8 +176,6 @@ namespace Velox.DB.Sqlite
 
             try
             {
-                
-
                 for (;;)
                 {
                     var returnCode = _sqlite3.step(stmt);
@@ -216,13 +217,10 @@ namespace Velox.DB.Sqlite
                             case SqliteColumnType.Null:
                                 record[fieldName] = null;
                                 break;
-
                         }
-
                     }
 
                     yield return record;
-
                 }
             }
             finally
@@ -256,5 +254,4 @@ namespace Velox.DB.Sqlite
             }
         }
     }
-
 }

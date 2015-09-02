@@ -51,7 +51,7 @@ namespace Velox.DB
         private static readonly List<Func<TypeInspector, bool>> _mappableTypes = new List<Func<TypeInspector, bool>>
             {
                 t => t.Is(TypeFlags.Array | TypeFlags.Byte),
-                t => t.Is(TypeFlags.Numeric | TypeFlags.String | TypeFlags.DateTime | TypeFlags.Boolean) && !t.Is(TypeFlags.Array)
+                t => t.Is(TypeFlags.Numeric | TypeFlags.String | TypeFlags.DateTime | TypeFlags.DateTimeOffset | TypeFlags.Boolean) && !t.Is(TypeFlags.Array)
             };
 
         internal OrmSchema(Type t, Repository repository)

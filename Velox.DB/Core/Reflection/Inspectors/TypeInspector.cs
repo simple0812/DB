@@ -58,24 +58,24 @@ namespace Velox.Core
 
         private static readonly Dictionary<Type, TypeFlags> _typeflagsMap = new Dictionary<Type, TypeFlags>()
         {
-            { typeof(Byte), TypeFlags.Byte},
-            { typeof(SByte), TypeFlags.SByte},
-            { typeof(Int16), TypeFlags.Int16},
-            { typeof(UInt16), TypeFlags.UInt16},
-            { typeof(Int32), TypeFlags.Int32},
-            { typeof(UInt32), TypeFlags.UInt32},
-            { typeof(Int64), TypeFlags.Int64},
-            { typeof(UInt64), TypeFlags.UInt64},
-            { typeof(Single), TypeFlags.Single},
-            { typeof(Double), TypeFlags.Double},
-            { typeof(Decimal), TypeFlags.Decimal},
-            { typeof(Boolean), TypeFlags.Boolean},
-            { typeof(Char), TypeFlags.Char},
-            { typeof(DateTime), TypeFlags.DateTime},
-            { typeof(TimeSpan), TypeFlags.TimeSpan},
+            { typeof(Byte)          , TypeFlags.Byte},
+            { typeof(SByte)         , TypeFlags.SByte},
+            { typeof(Int16)         , TypeFlags.Int16},
+            { typeof(UInt16)        , TypeFlags.UInt16},
+            { typeof(Int32)         , TypeFlags.Int32},
+            { typeof(UInt32)        , TypeFlags.UInt32},
+            { typeof(Int64)         , TypeFlags.Int64},
+            { typeof(UInt64)        , TypeFlags.UInt64},
+            { typeof(Single)        , TypeFlags.Single},
+            { typeof(Double)        , TypeFlags.Double},
+            { typeof(Decimal)       , TypeFlags.Decimal},
+            { typeof(Boolean)       , TypeFlags.Boolean},
+            { typeof(Char)          , TypeFlags.Char},
+            { typeof(DateTime)      , TypeFlags.DateTime},
+            { typeof(TimeSpan)      , TypeFlags.TimeSpan},
             { typeof(DateTimeOffset), TypeFlags.DateTimeOffset},
-            { typeof(String), TypeFlags.String},
-            { typeof(Guid), TypeFlags.Guid}
+            { typeof(String)        , TypeFlags.String},
+            { typeof(Guid)          , TypeFlags.Guid}
         };
 
 

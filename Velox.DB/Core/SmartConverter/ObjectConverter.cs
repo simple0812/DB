@@ -36,6 +36,8 @@ namespace Velox.Core
 {
     public static class ObjectConverter
     {
+        private static readonly TimeSpan TimeSpanOffset = new TimeSpan(0, 0, 0);
+
         public static T Convert<T>(this object value)
         {
             return (T) Convert(value, typeof (T));
@@ -131,6 +133,9 @@ namespace Velox.Core
             if (targetTypeInspector.Is(TypeFlags.DateTime))
                 return ToDateTime(value, sourceTypeInspector) ?? targetTypeInspector.DefaultValue();
 
+            if (targetTypeInspector.Is(TypeFlags.DateTimeOffset))
+                return ToDateTimeOffset(value, sourceTypeInspector) ?? targetTypeInspector.DefaultValue();
+
             if (targetType == typeof(TimeSpan))
                 return ToTimeSpan(value, sourceTypeInspector) ?? targetTypeInspector.DefaultValue();
 
@@ -174,5 +179,16 @@ namespace Velox.Core
             return null;
         }
 
+        private static DateTimeOffset? ToDateTimeOffset(object value, TypeInspector type)
+        {
+            if (type.Is(TypeFlags.Integer64))
+            {
+                DateTimeOffset dto = new DateTimeOffset(System.Convert.ToInt64(value), TimeSpanOffset);
+
+                return dto.ToLocalTime();
+            }
+
+            return null;
+        }
     }
 }
